@@ -1076,7 +1076,7 @@ class BurpExtender(IBurpExtender, IContextMenuFactory, ITab, IExtensionStateList
           referercmd = ' --referer="' + referer + '"'
 
            
-        sqlmapcmd = 'sqlmap.py -u "' + reqUrl + '"' + datacmd + cookiecmd + uacmd + referercmd + ' --delay=' + str(0) + ' --timeout=' + str(30) + ' --retries=' + str(3) + ' --level=' + str(5) + ' --risk=' + str(3) +  ' --threads=' + str(1) + ' --time-sec=' + str(5) + ' -b' + ' --batch --answers="crack=N,dict=N"\n\n'
+        sqlmapcmd = 'sqlmap.py -u "' + reqUrl + '"' + datacmd + cookiecmd + uacmd + referercmd + ' --delay=' + str(0) + ' --timeout=' + str(30) + ' --retries=' + str(3) + ' --level=' + str(5) + ' --risk=' + str(3) +  ' --threads=' + str(1) + ' --time-sec=' + str(5) + ' -b' + '--param-exclude="_ga|_gid|_gat" --batch --answers="crack=N,dict=N"\n\n'
 
         with open('file.txt', 'a') as file:
             file.write(sqlmapcmd)
