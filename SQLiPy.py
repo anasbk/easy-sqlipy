@@ -3,7 +3,7 @@ Name:           SQLiPy
 Version:        0.7.1
 Date:           9/3/2014
 Author:         Josh Berry - josh.berry@codewatch.org
-Github:         https://github.com/codewatchorg/sqlipy
+Github:         https://github.com/codewatchorg/sqlipys
 
 Description:    This plugin leverages the SQLMap API to initiate SQLMap scans against the target.
 
@@ -1076,7 +1076,7 @@ class BurpExtender(IBurpExtender, IContextMenuFactory, ITab, IExtensionStateList
           referercmd = ' --referer="' + referer + '"'
 
            
-        sqlmapcmd = 'sqlmap.py -u "' + reqUrl + '"' + datacmd + cookiecmd + uacmd + referercmd + ' --delay=' + str(0) + ' --timeout=' + str(30) + ' --retries=' + str(3) + ' --level=' + str(5) + ' --risk=' + str(3) +  ' --threads=' + str(1) + ' --time-sec=' + str(5) + ' -b' + '--param-exclude="_ga|_gid|_gat" --batch --answers="crack=N,dict=N"\n\n'
+        sqlmapcmd = 'sqlmap.py -u "' + reqUrl + '"' + datacmd + cookiecmd + uacmd + referercmd + ' --delay=' + str(0) + ' --timeout=' + str(30) + ' --retries=' + str(3) + ' --level=' + str(5) + ' --risk=' + str(3) +  ' --threads=' + str(1) + ' --time-sec=' + str(5) + ' -b' + ' --param-exclude="_ga|_gid|_gat" --batch --answers="crack=N,dict=N"\n\n'
 
         with open('file.txt', 'a') as file:
             file.write(sqlmapcmd)
